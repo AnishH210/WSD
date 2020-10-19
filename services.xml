@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="services.xsl"?>
+
+<Services bid="B1">
+<service>
+<no>1</no>
+<title>Basic Service</title>
+<services>General Clean,Repaste,Fan Replacement</services>
+<timeline>1-2 hrs</timeline>
+<spares>N/A</spares>
+<price>500</price>
+</service>
+
+<service bid="B2">
+<no>2</no>
+<title>Toroubleshooting</title>
+<services>Full Diagnostics H/W and S/W</services>
+<timeline>1-4 hrs</timeline>
+<spares>As Required</spares>
+<price>5000</price>
+</service>
+
+<service bid="B3">
+<no>3</no>
+<title>OS Upgrade</title>
+<services>Reinstall / Cloning</services>
+<timeline>1hr</timeline>
+<spares>OS License</spares>
+<price>750</price>
+</service>
+
+<service bid="B4">
+<no>4</no>
+<title>Data Recovery</title>
+<services>Data recovery at S/W and H/W level</services>
+<timeline>2-24hrs</timeline>
+<spares>Drives</spares>
+<price>5000</price>
+</service>
+
+<service bid="B5">
+<no>5</no>
+<title>Componenet Upgrade</title>
+<services>Upgrade of CPU/GPU/RAM/Storage</services>
+<timeline>1-4hrs</timeline>
+<spares>Components as needed</spares>
+<price>2000</price>
+</service>
+
+</Services>
