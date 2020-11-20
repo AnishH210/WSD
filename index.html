@@ -19,7 +19,7 @@
 <li><a href="Services.xml">Services</a></li>
 <li><a href="#">Recycling</a></li>
 <li><a href="#">Contact</a></li>
-<li><a href="#">Login</a></li>
+<li><a href="validation.html">Register</a></li>
 </ul>
 </div><br>
 	<div class="container1">
@@ -75,6 +75,23 @@
 		<audio controls autoplay="true">
   <source src="audio/TRK1.mp3" type="audio/mpeg">
   </audio>
+  <input type="button" value="Viewed" onclick="SetView()">
+    <input type="button" value="CheckViewership" onclick="GetView()">
+    <script>
+        function SetView()
+        {
+            document.cookie="Page Has been viewed";
+        }
+        function GetView()
+        {
+        if(document.cookie.length!=0)
+        {
+            alert(document.cookie);
+        }
+        else{
+            alert("No viewership data present");
+        }}
+    </script>
 	<div id="footer" class="container">
 		<div id="box1">
 			<div class="title">
