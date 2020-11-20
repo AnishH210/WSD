@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Config>
+	<PC>
+		<Slno>1</Slno>
+		<CPU>7700K</CPU>
+		<RAM>16GB</RAM>
+		<GPU>GTX 1070</GPU>
+		<Storage>1TB</Storage>
+	</PC>
+	<PC>
+		<Slno>2</Slno>
+		<CPU>9700K</CPU>
+		<RAM>16GB</RAM>
+		<GPU>GTX 1080</GPU>
+		<Storage>4TB</Storage>
+	</PC>
+	<PC>
+		<Slno>3</Slno>
+		<CPU>10850K</CPU>
+		<RAM>32GB</RAM>
+		<GPU>RTX 2080Ti</GPU>
+		<Storage>1TB SSD</Storage>
+	</PC>
+</Config>
