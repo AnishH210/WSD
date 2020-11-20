@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<form name="val" onsubmit="return validateform()" method="post">
+		<h2>Register</h2>
+		Account Id : <input id="accountid" name="Account Id"><br><br>
+		Name : <input type="text" input id="name"><br><br>
+		Phone Number : <input id="phoneno"><br><br>
+		Address : <input id="address"><br><br>
+		Email ID : <input id="email"><br><br>
+		
+		Username : <input id="user"><br><br>
+		<button onclick="register()">REGISTER</button>
+	</form>
+
+
+
+<script>
+
+function validateform() {
+	var x = document.forms["val"] ["fname"].value;
+	if (x=="") {
+		alert("Name must be filled out!");
+		return false;
+	}
+}
+
+
+function register() {
+	var acc = document.forms["val"]["accountid"].value;
+	var n = document.forms["val"]["name"].value;
+	var ph = document.forms["val"]["phoneno"].value;
+	var add = document.forms["val"]["address"].value;
+	var e = document.forms["val"]["email"].value;
+	var u = document.forms["val"]["user"].value;
+	
+
+	
+	if (isNaN(acc) || acc<99 || acc>999) {
+		alert("Enter Valid ID");
+	}
+
+	
+	if (isNaN(ph) || ph<999999999 || ph>9999999999) {
+		alert("Enter Valid Phone Number");
+	}
+
+	if( n == "" || typeof n !== "string" ) {
+            alert( "Please provide your name!" );
+            
+            return false;
+         }
+
+    if( x=e == "" ) {
+            alert( "Please provide your email!" );
+            
+            return false;
+         }
+
+    if( u == "" ) {
+            alert( "Please provide your Username!" );
+            
+            return false;
+         }
+
+    if( add == "" ) {
+            alert( "Please provide your address!" );
+            
+            return false;
+         }
+
+	
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>
