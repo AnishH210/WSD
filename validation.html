@@ -95,7 +95,7 @@
 <li><a href="Services.xml">Services</a></li>
 <li><a href="Configs.html">Configs</a></li>
 <li><a href="#">Contact</a></li>
-<li><a href="validation.html">Register</a></li>
+<li><a href="validation.html">Login</a></li>
 </ul>
 </div><br>
 	
@@ -107,7 +107,7 @@
 		<h2>Create Account</h2><br><br>
 		<input type="text" input id="name" placeholder="Name"><br><br>
 		<input id="email" placeholder="Email ID"><br><br>
-		<input id="phoneno" placeholder="Phone Number (Optional)"><br><br>
+		<input id="phoneno" placeholder="Phone Number"><br><br>
 		<input id="user" placeholder="Username"><br><br>
 		<input id="pass" placeholder="Password"><br><br>
 		<button class="btn" onclick="register()">CREATE</button><br><br>
@@ -121,7 +121,7 @@
 		<h2>Log In</h2><br><br>
 		<input id="user" placeholder="Username"><br><br>
 		<input id="pass" placeholder="Password"><br><br>
-		<button class="btn" onclick="register()">LOG IN</button><br><br>
+		<button class="btn" onclick="register1()">LOG IN</button><br><br>
 		<h5 class="message">Are you new here? &nbsp <a href="#">Create Account</a></h5>
 	</form>
 
@@ -139,7 +139,18 @@ function validateform() {
 		return false;
 	}
 }
+function register1() {
+	var w = document.forms["val"]["pass"].value;
+	var z = document.forms["val"]["user"].value;
+	if( z == "" || typeof u !== "string" ) {
+            alert( "Please provide your Username!" );
+         }
 
+    if( w == "" ) {
+            alert( "Please provide a Password!" );
+         }
+
+}
 
 function register() {
 	var u = document.forms["val"]["name"].value;
@@ -150,30 +161,21 @@ function register() {
 	
 	if( u == "" || typeof u !== "string" ) {
             alert( "Please provide your Name!" );
-            
-            return false;
          }
 
     if( x == "" || typeof u !== "string" ) {
             alert( "Please provide your email!" );
-            
-            return false;
          }
 
     if( z == "" || typeof u !== "string" ) {
             alert( "Please provide your Username!" );
-            
-            return false;
          }
 
     if( w == "" ) {
             alert( "Please provide a Password!" );
-            
-            return false;
          }
-         	if (isNaN(v) || v<999999999 || v>9999999999) {
+    if (isNaN(v) || v<999999999 || v>9999999999) {
 		alert("Enter Valid Phone Number");
-		return false;
 	}
 
 
