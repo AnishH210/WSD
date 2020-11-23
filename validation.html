@@ -1,19 +1,132 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>Computer Services</title>
+	<LINK REL="STYLESHEET" type="text/css" HREF="style.css">
 </head>
-<body>
-	<form name="val" onsubmit="return validateform()" method="post">
-		<h2>Register</h2>
-		Account Id : <input id="accountid" name="Account Id"><br><br>
-		Name : <input type="text" input id="name"><br><br>
-		Phone Number : <input id="phoneno"><br><br>
-		Address : <input id="address"><br><br>
-		Email ID : <input id="email"><br><br>
+<style>
 		
-		Username : <input id="user"><br><br>
-		<button onclick="register()">REGISTER</button>
+		body {
+			background: url("bsbg2.jpg");
+			height: 100vh;
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
+		}
+		
+		.form {
+			font-size: 20px;
+			text-align: center;
+			position: relative;
+			z-index: 1;
+			background-color: black;
+			max-width: 360px;
+			margin: 0 auto 100px;
+			padding: 45px;
+			opacity: 80%;
+			padding-bottom: 70px;
+		}
+
+		.form input {
+			font-family: "Roboto", Sans serif;
+			outline: 1;
+			width: 100%;
+			border: 0;
+			margin: 0 0 15px;
+			padding: 15px;
+			box-sizing: border-box;
+			font-size: 14px;
+		}
+
+		.btn {
+			font-family: "Roboto", Sans serif;
+			text-transform: uppercase;
+			outline: 0;
+			background: #4caf50;
+			width: 30%;
+			border: 0;
+			padding: 15px;
+			color: #ffffff;
+			font-size: 14px;
+			cursor: pointer;
+
+		}
+
+		h2, h5 {
+			font-family: "Roboto", Sans serif;
+			color: #ffffff;
+			background-color: transparent;
+			
+		}
+
+		.form-button:hover, .form-button:active {
+			background: #43a047;
+		}
+
+		
+		
+	.form .create {
+		display: none;
+	}
+
+
+		
+		footer {
+	height: 200px;
+	background: #000;
+	padding: 50px;
+	text-align: center;
+	
+}
+
+
+
+	</style>
+<body>
+	<div id="nav">
+<h1><a>Computer Services</a></h1>
+</div>
+<div id="bgrnd">
+<div id="nav2">
+<ul>
+<li><a href="about.html">About</a></li>
+<li><a href="Services.xml">Services</a></li>
+<li><a href="Configs.html">Configs</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="validation.html">Register</a></li>
+</ul>
+</div><br>
+	
+	
+	<div class="form">
+	
+	
+	<form class="create" name="val" onsubmit="return validateform()" method="post">
+		<h2>Create Account</h2><br><br>
+		<input type="text" input id="name" placeholder="Name"><br><br>
+		<input id="email" placeholder="Email ID"><br><br>
+		<input id="phoneno" placeholder="Phone Number (Optional)"><br><br>
+		<input id="user" placeholder="Username"><br><br>
+		<input id="pass" placeholder="Password"><br><br>
+		<button class="btn" onclick="register()">CREATE</button><br><br>
+		<h5 class="message">Already have an account? &nbsp <a href="#">Log in</a></h5>
+
 	</form>
+	
+
+
+<form class="login" name="val" onsubmit="return validateform()" method="post">
+		<h2>Log In</h2><br><br>
+		<input id="user" placeholder="Username"><br><br>
+		<input id="pass" placeholder="Password"><br><br>
+		<button class="btn" onclick="register()">LOG IN</button><br><br>
+		<h5 class="message">Are you new here? &nbsp <a href="#">Create Account</a></h5>
+	</form>
+
+
+</div>
 
 
 
@@ -29,56 +142,51 @@ function validateform() {
 
 
 function register() {
-	var acc = document.forms["val"]["accountid"].value;
-	var n = document.forms["val"]["name"].value;
-	var ph = document.forms["val"]["phoneno"].value;
-	var add = document.forms["val"]["address"].value;
-	var e = document.forms["val"]["email"].value;
-	var u = document.forms["val"]["user"].value;
+	var u = document.forms["val"]["name"].value;
+	var v = document.forms["val"]["phoneno"].value;
+	var w = document.forms["val"]["pass"].value;
+	var x = document.forms["val"]["email"].value;
+	var z = document.forms["val"]["user"].value;
 	
-
-	
-	if (isNaN(acc) || acc<99 || acc>999) {
-		alert("Enter Valid ID");
-	}
-
-	
-	if (isNaN(ph) || ph<999999999 || ph>9999999999) {
-		alert("Enter Valid Phone Number");
-	}
-
-	if( n == "" || typeof n !== "string" ) {
-            alert( "Please provide your name!" );
+	if( u == "" || typeof u !== "string" ) {
+            alert( "Please provide your Name!" );
             
             return false;
          }
 
-    if( x=e == "" ) {
+    if( x == "" || typeof u !== "string" ) {
             alert( "Please provide your email!" );
             
             return false;
          }
 
-    if( u == "" ) {
+    if( z == "" || typeof u !== "string" ) {
             alert( "Please provide your Username!" );
             
             return false;
          }
 
-    if( add == "" ) {
-            alert( "Please provide your address!" );
+    if( w == "" ) {
+            alert( "Please provide a Password!" );
             
             return false;
          }
+         	if (isNaN(v) || v<999999999 || v>9999999999) {
+		alert("Enter Valid Phone Number");
+		return false;
+	}
 
-	
+
 }
-
-
-
-
-
 </script>
 
+<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+
+<script>
+	
+$('.message a').click(function() {
+$('form').animate({height:"toggle", opacity:"toggle"}, "slow")
+});
+</script>
 </body>
 </html>
