@@ -117,7 +117,7 @@
 	
 
 
-<form class="login" name="val" onsubmit="return validateform()" method="post">
+<form class="login" name="val2" onsubmit="return validateform()" method="post">
 		<h2>Log In</h2><br><br>
 		<input id="user" placeholder="Username"><br><br>
 		<input id="pass" placeholder="Password"><br><br>
@@ -132,16 +132,10 @@
 
 <script>
 
-function validateform() {
-	var x = document.forms["val"] ["fname"].value;
-	if (x=="") {
-		alert("Name must be filled out!");
-		return false;
-	}
 }
 function register1() {
-	var w = document.forms["val"]["pass"].value;
-	var z = document.forms["val"]["user"].value;
+	var w = document.forms["val2"]["pass"].value;
+	var z = document.forms["val2"]["user"].value;
 	if( z == "" || typeof u !== "string" ) {
             alert( "Please provide your Username!" );
          }
@@ -151,6 +145,8 @@ function register1() {
          }
 
 }
+</script>
+<script>
 
 function register() {
 	var u = document.forms["val"]["name"].value;
