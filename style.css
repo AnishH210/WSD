@@ -79,17 +79,6 @@ body{
 	background-attachment: fixed;	
 }
 
-.container1 .card .imgev .front {
-	background-image: url("booksign1.jpg");
-	z-index: 2;
-	backface-visibility: hidden;
-}
-
-
-.container1 .card .imgev .back {
-	z-index: 1;
-	background-image: url("booksign2.jpg");
-}
 
 .container1 .card .imgev:hover  {
 	transform: rotateY(180deg);
