@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<title>Computer Services</title>
+<LINK REL="STYLESHEET" type="text/css" HREF="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="all.css">
+    
+    <script src="angular.min.js"></script>
+    <script src="product.js"></script>
+    <script type="filtersearch.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+
+    <div id="nav">
+<h1><a href="index.html">Computer Services</a></h1>
+</div>
+
+<br><br>
+<h1>Computer Components</h1>
+<br>
+<div class="rows">
+Rows to Display : <input type="number" step="1" min="0" max="15" ng-model="rowlimit" />
+</div>
+<br>
+<div class="search">
+    Search : <input type="text" placeholder="price/name etc." ng-model="Search" />
+    
+</div>
+
+    <table class="salebooks" cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Index</th>
+            <th>PID</th>
+            <th>NAME</th>
+            <th>VENDOR</th>
+            <th>PRICE</th>
+            <th>QUANTITY</th>
+            <th>CONDITION</th>
+            <th>OPTIONS</th>
+        </tr>
+        <tr ng-repeat="product in listProducts | limitTo:rowlimit |filter:Search ">
+            <td>{{$index}}</td>
+            <td>{{product.id}}</td>
+            <td>{{product.name|uppercase}}</td>
+            <td>{{product.vend}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.cond|lowercase}}</td>
+            <td>
+                <a href="#" ng-click="delete()">Delete</a> |
+                <a href="#" ng-click="edit(product.id)">Edit</a>
+            </td>
+        </tr>
+
+    
+
+    </table>
+    <h3>Information Port</h3>
+    <table cellpadding="2" cellspacing="2">
+        <tr>
+            <td>ID</td>
+            <td><input type="text" ng-model="id"></td>
+        </tr>
+        <tr>
+            <td>NAME</td>
+            <td><input type="text" ng-model="name"></td>
+        </tr>
+        <tr>
+            <td>VENDOR</td>
+            <td><input type="text" ng-model="vend"></td>
+        </tr>
+        <tr>
+            <td>PRICE</td>
+            <td><input type="text" ng-model="price"></td>
+        </tr>
+        <tr>
+            <td>QUANTITY</td>
+            <td><input type="text" ng-model="quantity"></td>
+        </tr>
+        <tr>
+            <td>CONDITION</td>
+            <td><input type="text" ng-model="cond"></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="button" value="ADD" ng-click="add()">
+            <input type="button" value="SAVE" ng-click="save()"></td>
+        </tr>
+    </table>
+    <br><br><br>
+<footer>
+</footer>
+</body>
+</html>
