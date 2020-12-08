@@ -2,32 +2,31 @@ angular.module('myapp',[])
 .controller('myctrl',function($scope)
 {
     $scope.listProducts=[
-        {id:'p01',name:'Core i9 10850KF',vendor:'Intel',price:50000,quantity:15,cond:"New"},
-        {id:'p02',name:'DDR4 8GB 3666MHz',vendor:'Corsair',price:4000,quantity:50,cond:"New"},
-        {id:'p03',name:'Z490 Strix',vendor:'Asus',price:35000,quantity:4,cond:"Refurb"},
-        {id:'p04',name:'ML360R',vendor:'CM',price:13000,quantity:5,cond:"Openbox"},
-        {id:'p05',name:'Ryzen 3950X',vendor:'AMD',price:40000,quantity:1,cond:"Used"} 
+        {id:'p01',name:'10850K',vend:'Intel',price:10000,quantity:7,cond:"New"},
+        {id:'p02',name:'GTX 1080',vend:'Nvidea',price:17300,quantity:2,cond:"Good"},
+        {id:'p03',name:'RTX 2080',vend:'Nvidea',price:20000,quantity:12,cond:"New"},
+        {id:'p04',name:'RAM DDR4',vend:'Crucial',price:4350,quantity:40,cond:"Used"},
+        {id:'p05',name:'700W PSU',vend:'Antec',price:4000,quantity:20,cond:"OpenBox"}
+        
     ];
     $scope.save=function()
     {
         var index=getindex($scope.id);
         $scope.listProducts[index].name=$scope.name;
-        $scope.listProducts[index].pub=$scope.pub;
+        $scope.listProducts[index].vend=$scope.vend;
         $scope.listProducts[index].price=$scope.price;
         $scope.listProducts[index].quantity=$scope.quantity;
         $scope.listProducts[index].cond=$scope.cond;
-        $scope.listProducts[index].contact=$scope.contact;
     }
     $scope.add=function()
     {
         $scope.listProducts.push({
             id:$scope.id,
             name:$scope.name,
-            pub:$scope.pub,
+            vend:$scope.vend,
             price:$scope.price,
             quantity:$scope.quantity,
-            cond:$scope.cond,
-            contact:$scope.contact
+            cond:$scope.cond
         });
     }
     function getindex(id)
@@ -43,11 +42,10 @@ angular.module('myapp',[])
         var product=$scope.listProducts[index];
         $scope.id=product.id;
         $scope.name=product.name;
-        $scope.pub=product.pub;
+        $scope.vend=product.vend;
         $scope.price=product.price;
         $scope.quantity=product.quantity;
         $scope.cond=product.cond;
-        $scope.contact=product.contact;
     }
     $scope.delete=function()
     {
