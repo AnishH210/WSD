@@ -7,28 +7,6 @@
     th,td{
         padding: 5px;
     }
-    section:after {
-  content: "";
-  display: table;
-  clear: both;
-  color: #fefae0;
-}
-h2 {
-  text-align: center;
-  color: black;
-}
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  
-  height: 300px; /* only for demonstration, should be removed */
-}
 </style>
 <html>
 <head>
@@ -139,21 +117,6 @@ function checkCookie() {
 		
 	</div>
 </div>
-<section>
-  <nav>
-    <ul><br><br>
-      <li><a href="#/pjone">Rick Riordan</a></li><br/><br/>
-      <li><a href="#/pjtwo">John Grisham</a></li><br/><br/>
-      <li><a href="#/pjthree">Paulo Coelho</a></li><br/><br/>
-    </ul>
-  </nav>
-  
-<article ng-view>
-  
-</article>
-</section>
-<script src="angular.js"></script>
-
 <button type="button" onclick="loadXML()">Select configs</button>
     <br><br>
     <table id="demo"></table>
